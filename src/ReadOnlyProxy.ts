@@ -2,6 +2,9 @@ import { EventEmitter } from 'node:events';
 import TypedEmitter from 'typed-emitter';
 import { Server, Socket, createServer } from 'node:net';
 
+/**
+ * Read only proxy, read only proxies are proxies where you can only read packets
+ */
 export default class ReadOnlyProxy extends (EventEmitter as new () => TypedEmitter<ReadOnlyProxyEvents>) {
   private readonly options: ReadOnlyProxyOptions;
   private readonly sockets: ReadOnlyProxySocketMap[];
@@ -63,6 +66,10 @@ export default class ReadOnlyProxy extends (EventEmitter as new () => TypedEmitt
     this.server.on('error', (error) => this.emit('error', 'server', error));
   }
 
+  /**
+   * Log a debug message (only if debug is enabled)
+   * @param args Data to log
+   */
   private debug(...args) {
     if (this.options.debug) console.log('[DEBUG]', ...args);
   }
