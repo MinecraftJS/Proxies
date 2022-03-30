@@ -21,6 +21,7 @@ import * as Proxies from '@minecraft-js/proxies'; // ES6
 ```
 
 ## Read only proxies
+
 Read only proxies are proxies where you can only read packets.
 Create a read only proxy like so
 
@@ -32,6 +33,7 @@ const proxy = new Proxies.ReadOnlyProxy({
 ```
 
 And then you can use the `ReadOnlyProxy#on` method to listen for different events:
+
 - `raw_listening` - When the TCP server is listening
 - `raw_connect` - When a client opens a connection
 - `raw_disconnect` - When a client closes a connection
@@ -41,7 +43,9 @@ And then you can use the `ReadOnlyProxy#on` method to listen for different event
 - `incoming_data` - When data is received from the target server
 
 # Using TypeScript?
+
 If you are using TypeScript or you want type checking make sure to install the `typed-emitter` package!
+
 ```bash
 $ npm install typed-emitter
 ```
