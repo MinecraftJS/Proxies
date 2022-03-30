@@ -1,0 +1,6 @@
+.github
+src
+test
+.deepsource.toml
+.prettierrc
+tsconfig.json
