@@ -1,6 +1,6 @@
 .github
 src
-test
+example
 .deepsource.toml
 .prettierrc
 tsconfig.json

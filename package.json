@@ -1,7 +1,7 @@
 {
-  "name": "template",
+  "name": "@minecraft-js/proxies",
   "version": "1.0.0",
-  "description": "todo: change",
+  "description": "Create proxies for Minecraft",
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,19 +9,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MinecraftJS/template.git"
+    "url": "git+https://github.com/MinecraftJS/Proxies.git"
   },
   "keywords": [
     "minecraftjs"
   ],
-  "author": "todo: change",
+  "author": "RichardDorian",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/MinecraftJS/template/issues"
+    "url": "https://github.com/MinecraftJS/Proxies/issues"
   },
-  "homepage": "https://github.com/MinecraftJS/template#readme",
+  "homepage": "https://github.com/MinecraftJS/Proxies#readme",
   "devDependencies": {
+    "@types/node": "^17.0.23",
     "prettier": "^2.6.1",
+    "typed-emitter": "^2.1.0",
     "typescript": "^4.6.3"
   }
 }
