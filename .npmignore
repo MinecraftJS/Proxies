@@ -1,6 +1,0 @@
-.github
-src
-example
-.deepsource.toml
-.prettierrc
-tsconfig.json

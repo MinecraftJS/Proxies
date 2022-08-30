@@ -38,12 +38,18 @@ export default class ReadOnlyProxy extends (EventEmitter as new () => TypedEmitt
         internal: internalSocket,
       });
 
-      // Handle errors
+      // Handle close
       socket.on('close', (hadError) => {
         this.emit('raw_disconnect', socket, hadError);
         internalSocket.end();
       });
       internalSocket.on('close', () => socket.end());
+
+      // Handle errors
+      socket.on('error', (error) => this.emit('error', 'socket', error));
+      internalSocket.on('error', (error) =>
+        this.emit('error', 'internal', error)
+      );
 
       // Connect the internalSocket to the target server
       internalSocket.connect(
@@ -75,7 +81,7 @@ export default class ReadOnlyProxy extends (EventEmitter as new () => TypedEmitt
   }
 }
 
-type ErrorOrigin = 'server' | 'internal';
+type ErrorOrigin = 'server' | 'internal' | 'socket';
 
 type ReadOnlyProxyEvents = {
   raw_listening: (server: Server) => void;
