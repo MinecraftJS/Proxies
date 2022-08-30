@@ -26,7 +26,7 @@
     "@minecraft-js/bufwrapper": "^1.0.1"
   },
   "devDependencies": {
-    "@types/node": "^17.0.23",
+    "@types/node": "^18.7.14",
     "prettier": "^2.6.1",
     "typed-emitter": "^2.1.0",
     "typedoc": "^0.23.11",
